@@ -1,0 +1,93 @@
+SELECT - extracts data from a database
+UPDATE - updates data in a database
+DELETE - deletes data from a database
+INSERT INTO - inserts new data into a database
+CREATE DATABASE - creates a new database
+ALTER DATABASE - modifies a database
+CREATE TABLE - creates a new table
+ALTER TABLE - modifies a table
+DROP TABLE - deletes a table
+CREATE INDEX - creates an index (search key)
+DROP INDEX - deletes an index
+
+pwd - useful to know the present working directory.
+ls - to list all the files in that directory.
+mkdir <name> - to create a directory with that ‘name’.
+cd <name> - to enter into that directory.
+vi <filename> - to open a text editor and write specific code
+ based on extension.
+ ex: vi HelloWorld.java
+ vi Welcome.php
+i – to insert text in the file opened by the vi editor.
+:wq – to write and exit from the vi editor.
+:q – to quit from the editor without writing anything into the file.
+cd – to come out of the present working directory.
+rm – to remove a file or directory
+ex: rm filename.txt
+rm –r directory_name
+
+			DATABASE MANIPULATION
+bash$- mysql -u mwhelan -p
+- use mwhelan;
+if no database
+-create schema databaseName;
+see all databases
+- show databases;
+see all tables in database
+- show tables from databaseName;
+see columns from a table- schema of 
+- show columns from tabelName;
+see all actual contents from table
+- SELECT * FROM tableName;
+Insert into a table
+- INSERT INTO tableName(params, params,paramsString) VALUES (3,3,'water');
+Example of create table
+-CREATE TABLE node (longitude_5 FLOAT(10), latitude_6 FLOAT(10),
+		groupid_7 varchar(40), nodeID_8 varchar(40), activeNode_4 BOOLEAN);
+delete a table
+-DROP TABLE tableName;
+to have a timestamp with a table
+-CREATE TABLE blah(s int(2), t TIMESTAMP); yyyy-mm-dd hh:mm:dd
+Convert to unix epoch:
+	-SELECT t ,UNIX_TIMESTAMP(t) FROM blah;
+get time on server
+	INSERT INTO table VALUES (NOW());
+get newest date  from table were column = ''
+ 	SELECT max(DATE_FORMAT(createdAt, '%y-%m-%d')) FROM sensors WHERE nodeid_8 = $ID"
+get all table data were column = '' RETURN  newest based on time
+ 	SELECT * FROM sensors WHERE nodeid_8 = $nodeID GROUP BY createdAt DESC LIMIT 1
+update a lot of stuff
+	UPDATE table SET columnName = $variable , columnName2 = $variable2  WHERE columnName3 = $variable3
+
+Website
+	user - # of usernames of User table
+	nodes - # nodes from each state of State table
+	active nodes - # of all active nodes from all states of States 					Table
+
+User
+	username - inserted 
+	password - inserted
+	states - inserted
+	email - inserted
+
+State 
+	state - added on server to be pulled from
+	Coordinates - added on server to be pulled from
+	Nodes - every unique node ID within the coordinates
+	Active nodes - Pulls all active nodes with matching Coordinates
+					from Node tables active, long, lati keys.
+
+Node
+	Longitude - pulled form sensor of Sensor Table with matching 			NodeID
+	Latitude - same **
+	GroupID - Inserted 
+	NodeID - Inserted
+	Active - Checks Sensors table's Date to see if it matches time 			of now returns boolean
+
+
+Sensors 
+	Sensors - inserted data
+	dates - inserted data
+	latitude - insert data
+	longitude - inserted data
+
