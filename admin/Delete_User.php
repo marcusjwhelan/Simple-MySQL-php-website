@@ -2,8 +2,8 @@
 #======================================================================================
 	# connect to database 
 	$host = "cs.okstate.edu";
-	$dbusername = "mwhelan";
-	$dbpassword = "Iqoo8ia";
+	$dbusername = "*****";
+	$dbpassword = "******";
 	$db_name="mwhelan";
 
 	mysql_connect("$host", "$dbusername", "$dbpassword")or die("cannot connect");
