@@ -7,8 +7,8 @@
 #======================================================================================
 	#connect to database
 	$host = "cs.okstate.edu";   # localhost:3306 or 127.0.0.1:3306
-	$dbusername =  "mwhelan";    # root
-	$dbpassword = "Iqoo8ia";   # root
+	$dbusername =  "******";    # root
+	$dbpassword = "******";   # root
 	$db_name= "mwhelan";
 	mysql_connect("$host", "$dbusername", "$dbpassword")or die("cannot connect");
 	mysql_select_db("$db_name")or die("cannot select DB");
