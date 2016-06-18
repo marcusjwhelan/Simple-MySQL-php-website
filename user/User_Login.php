@@ -40,8 +40,8 @@
 
 				#set up connection
 				$host = "cs.okstate.edu";
-				$dbusername = "mwhelan";
-				$dbpassword = "Iqoo8ia";
+				$dbusername = "******";
+				$dbpassword = "*******";
 				$db_name="mwhelan";
 				
 				# create connection to database and check connection
